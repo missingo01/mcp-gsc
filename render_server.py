@@ -57,7 +57,7 @@ def main():
         pass
 
     app = BearerAuthMiddleware(
-    mcp.streamable_http_app(host="0.0.0.0"),
+    mcp.streamable_http_app(),
     token,
 )
 
