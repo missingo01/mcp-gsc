@@ -56,7 +56,10 @@ def main():
     except Exception:
         pass
 
-    app = BearerAuthMiddleware(mcp.sse_app(), token)
+    app = BearerAuthMiddleware(
+    mcp.streamable_http_app(host="0.0.0.0"),
+    token,
+)
 
     uvicorn.run(
         app,
